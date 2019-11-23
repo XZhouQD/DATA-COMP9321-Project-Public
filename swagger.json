@@ -5,6 +5,9 @@
         "/property/": {
             "post": {
                 "responses": {
+                    "401": {
+                        "description": "Auth Failed"
+                    },
                     "400": {
                         "description": "Validation Error"
                     },
@@ -39,6 +42,21 @@
                     "type": "integer"
                 }
             ],
+            "get": {
+                "responses": {
+                    "404": {
+                        "description": "Property was not found"
+                    },
+                    "200": {
+                        "description": "Successful"
+                    }
+                },
+                "description": "Get properties by ID",
+                "operationId": "get_property_with_id",
+                "tags": [
+                    "Properties"
+                ]
+            },
             "delete": {
                 "responses": {
                     "404": {
@@ -53,21 +71,6 @@
                 },
                 "description": "Delete properties by ID",
                 "operationId": "delete_property_with_id",
-                "tags": [
-                    "Properties"
-                ]
-            },
-            "get": {
-                "responses": {
-                    "404": {
-                        "description": "Property was not found"
-                    },
-                    "200": {
-                        "description": "Successful"
-                    }
-                },
-                "description": "Get properties by ID",
-                "operationId": "get_property_with_id",
                 "tags": [
                     "Properties"
                 ]
